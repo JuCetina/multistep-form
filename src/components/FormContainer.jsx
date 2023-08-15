@@ -40,13 +40,12 @@ const FormContainer = () => {
     <Container>
       <StepsAside step={step}/>
       <form onSubmit={handleSubmit(saveForm)}>
+        
         {step === 1 && <PersonalInfo register={register} errors={errors} isValid={isValid} completeStep={completeStep} />}
         {step === 2 && <SelectPlan register={register} isValid={isValid} completeStep={completeStep} backStep={backStep} watch={watch} />}
         {step === 3 && <Addons register={register} completeStep={completeStep} backStep={backStep} watch={watch} />}
         {step === 4 && <Finishing completeStep={completeStep} backStep={backStep} backToPlan={backToPlan} watch={watch} />}
         {step === 5 && <End />}
-      
-        {JSON.stringify(watch())}
      
       </form>
     </Container>

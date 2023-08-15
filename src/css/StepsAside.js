@@ -4,6 +4,7 @@ const backgroundAside = "#483EFF";
 
 export const StepsContainer = styled.div`
     width: 274px;
+    height: 568px;
     border-radius: 10px;
     background: ${backgroundAside};
     position: relative;
