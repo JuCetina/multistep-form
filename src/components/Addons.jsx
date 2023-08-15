@@ -1,85 +1,17 @@
 import {
+  AddonCost,
+  AddonDesc,
+  AddonLabel,
+  AddonText,
+  Checkmark,
+} from "../css/Addons";
+import {
   BackButton,
   NxtButton,
   StepWrapper,
   Subtitle,
   Title,
 } from "../css/PersonalInfo";
-import styled from "styled-components";
-
-const AddonLabel = styled.label`
-  width: 450px;
-  heigth: 81px;
-  padding: 18px 24px;
-  border: 1px solid #d6d9e6;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-  cursor: pointer;
-  position: relative;
-  & input {
-    position: absolute;
-    opacity: 0;
-    height: 0;
-    width: 0;
-  }
-  &:active {
-    border: 1px solid #483EFF;
-  }
-  &.isActive{
-    border: 1px solid #483EFF;
-    background-color: #F8F9FF;
-  }
-`;
-
-const AddonText = styled.p`
-  color: #022959;
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-`;
-
-const AddonDesc = styled.p`
-  color: #9699aa;
-  font-size: 14px;
-`;
-
-const AddonCost = styled.p`
-  color: #483eff;
-  font-size: 14px;
-  font-weight: 700;
-`;
-
-const Checkmark = styled.span`
-  position: relative;
-  top:10px;
-  height: 22px;
-  width: 22px;
-  border-radius: 5px;
-  border: 1px solid #D6D9E6;
-  input:checked ~ & {
-    background-color: #483EFF;
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  input:checked ~ &:after {
-    display: block;
-  }
-  &:after {
-    left: 7px;
-    top: 4px;
-    width: 4px;
-    height: 8px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-  }
-`;
 
 const Addons = ({ register, completeStep, backStep, watch }) => {
   let yearly = watch("yearly");
