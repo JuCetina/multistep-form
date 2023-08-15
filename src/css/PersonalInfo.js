@@ -70,3 +70,19 @@ export const Error = styled.p`
   display: inline-block;
   text-align: right;
 `;
+
+export const BackButton = styled.button`
+  width: 123px;
+  height: 48px;
+  color: ${subtitleColor};
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 68px;
+  background-color: white;
+  position: absolute;
+  bottom: 16px;
+  left: 100px;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+`;

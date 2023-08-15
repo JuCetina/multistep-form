@@ -1,117 +1,170 @@
-const SelectPlan = ({
-  register,
-  isValid,
-  completeStep,
-  backStep,
-  watch
-}) => {
+import arcade from "../assets/arcade.svg";
+import advanced from "../assets/advanced.svg";
+import pro from "../assets/pro.svg";
+import {
+  BackButton,
+  NxtButton,
+  StepWrapper,
+  Subtitle,
+  Title,
+} from "../css/PersonalInfo";
+import {
+  PlanDiscount,
+  PlanImg,
+  PlanInput,
+  PlanLabel,
+  PlanText,
+  PlanValue,
+  SliderBtn,
+  SwitchBtn,
+  TimeText,
+  YearlyPlanLabel,
+} from "../css/SelectPlan";
 
-  let yearly = watch('yearly');
-  
+const SelectPlan = ({ register, isValid, completeStep, backStep, watch }) => {
+  let yearly = watch("yearly");
+
   return (
-    <div>
-      <h2>Select your plan</h2>
-      <p>You have the option of monthly or yearly billing.</p>
-      
-      {!yearly && (
-        <>
-          <label htmlFor="arcade">
-            <p>Arcade</p>
-            <p>$9/mo</p>
-          </label>
-          <input
-            type="radio"
-            id="arcade"
-            value="arcade"
-            {...register("plan", {
-              required: true,
-            })}
-          />
+    <StepWrapper>
+      <Title>Select your plan</Title>
+      <Subtitle>You have the option of monthly or yearly billing.</Subtitle>
 
-          <label htmlFor="advanced">
-            <p>Advanced</p>
-            <p>$12/mo</p>
-          </label>
-          <input
-            type="radio"
-            id="advanced"
-            value="advanced"
-            {...register("plan", {
-              required: true,
-            })}
-          />
+      <div style={{ display: "flex", gap: "18px" }}>
+        {!yearly && (
+          <>
+            <PlanInput
+              type="radio"
+              id="arcade"
+              value="arcade"
+              {...register("plan", {
+                required: true,
+              })}
+            />
+            <PlanLabel htmlFor="arcade">
+              <PlanImg src={arcade} alt="" />
+              <div>
+                <PlanText>Arcade</PlanText>
+                <PlanValue>$9/mo</PlanValue>
+              </div>
+            </PlanLabel>
 
-          <label htmlFor="pro">
-            <p>Pro</p>
-            <p>$15/mo</p>
-          </label>
-          <input
-            type="radio"
-            id="pro"
-            value="pro"
-            {...register("plan", {
-              required: true,
-            })}
-          />
-        </>
-      )}
+            <PlanInput
+              type="radio"
+              id="advanced"
+              value="advanced"
+              {...register("plan", {
+                required: true,
+              })}
+            />
+            <PlanLabel htmlFor="advanced">
+              <PlanImg src={advanced} alt="" />
+              <div>
+                <PlanText>Advanced</PlanText>
+                <PlanValue>$12/mo</PlanValue>
+              </div>
+            </PlanLabel>
 
-      {yearly && (
-        <>
-          <label htmlFor="arcade">
-            <p>Arcade</p>
-            <p>$90/yr</p>
-            <p>2 months free</p>
-          </label>
-          <input
-            type="radio"
-            id="arcade"
-            value="arcade"
-            {...register("plan", {
-              required: true,
-            })}
-          />
+            <PlanInput
+              type="radio"
+              id="pro"
+              value="pro"
+              {...register("plan", {
+                required: true,
+              })}
+            />
+            <PlanLabel htmlFor="pro">
+              <PlanImg src={pro} alt="" />
+              <div>
+                <PlanText>Pro</PlanText>
+                <PlanValue>$15/mo</PlanValue>
+              </div>
+            </PlanLabel>
+          </>
+        )}
 
-          <label htmlFor="advanced">
-            <p>Advanced</p>
-            <p>$120/yr</p>
-            <p>2 months free</p>
-          </label>
-          <input
-            type="radio"
-            id="advanced"
-            value="advanced"
-            {...register("plan", {
-              required: true,
-            })}
-          />
+        {yearly && (
+          <>
+            <PlanInput
+              type="radio"
+              id="arcade"
+              value="arcade"
+              {...register("plan", {
+                required: true,
+              })}
+            />
+            <YearlyPlanLabel htmlFor="arcade">
+              <PlanImg src={arcade} alt="" />
+              <div>
+                <PlanText>Arcade</PlanText>
+                <PlanValue>$90/yr</PlanValue>
+                <PlanDiscount>2 months free</PlanDiscount>
+              </div>
+            </YearlyPlanLabel>
 
-          <label htmlFor="pro">
-            <p>Pro</p>
-            <p>$150/yr</p>
-            <p>2 months free</p>
-          </label>
-          <input
-            type="radio"
-            id="pro"
-            value="pro"
-            {...register("plan", {
-              required: true,
-            })}
-          />
-        </>
-      )}
+            <PlanInput
+              type="radio"
+              id="advanced"
+              value="advanced"
+              {...register("plan", {
+                required: true,
+              })}
+            />
+            <YearlyPlanLabel htmlFor="advanced">
+              <PlanImg src={advanced} alt="" />
+              <div>
+                <PlanText>Advanced</PlanText>
+                <PlanValue>$120/yr</PlanValue>
+                <PlanDiscount>2 months free</PlanDiscount>
+              </div>
+            </YearlyPlanLabel>
 
-      <label htmlFor="billing">Yearly</label>
-      <input type="checkbox" id="billing" {...register("yearly")} />
+            <PlanInput
+              type="radio"
+              id="pro"
+              value="pro"
+              {...register("plan", {
+                required: true,
+              })}
+            />
+            <YearlyPlanLabel htmlFor="pro">
+              <PlanImg src={pro} alt="" />
+              <div>
+                <PlanText>Pro</PlanText>
+                <PlanValue>$150/yr</PlanValue>
+                <PlanDiscount>2 months free</PlanDiscount>
+              </div>
+            </YearlyPlanLabel>
+          </>
+        )}
+      </div>
 
-      <button type="button" onClick={backStep}>
-        Back Step
-      </button>
-      <button type="button" disabled={!isValid} onClick={completeStep}>
+      <div
+        style={{
+          width: "100%",
+          height: "48px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: "8px",
+          backgroundColor: "#F8F9FF",
+          marginTop: "32px",
+        }}
+      >
+        <TimeText className={!yearly ? "isActive" : ""}>Monthly</TimeText>
+        <SwitchBtn htmlFor="billing">
+          <input type="checkbox" id="billing" {...register("yearly")} />
+          <SliderBtn className="round"></SliderBtn>
+        </SwitchBtn>
+        <TimeText className={yearly ? "isActive" : ""}>Yearly</TimeText>
+      </div>
+
+      <BackButton type="button" onClick={backStep}>
+        Go Back
+      </BackButton>
+      <NxtButton type="button" disabled={!isValid} onClick={completeStep}>
         Next Step
-      </button>
-    </div>
+      </NxtButton>
+    </StepWrapper>
   );
 };
 
