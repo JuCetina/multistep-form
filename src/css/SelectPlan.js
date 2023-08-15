@@ -19,6 +19,9 @@ export const PlanLabel = styled.label`
   flex-direction: column;
   padding: 20px 16px;
   cursor: pointer;
+  &:active {
+    border: 1px solid ${selectedBorder};
+  }
 `;
 
 export const YearlyPlanLabel = styled(PlanLabel)`

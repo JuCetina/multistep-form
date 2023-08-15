@@ -57,9 +57,9 @@ export const NxtButton = styled.button`
   bottom: 16px;
   right: 0;
   cursor: pointer;
+  border: none;
   &:disabled{
     background-color: ${inactiveBtn};
-    border: none;
   }
 `;
 
