@@ -5,4 +5,5 @@ export const StepDescription = styled.div`
   font-weight: 700;
   text-transform: uppercase;
   color: white;
+  letter-spacing: 1px;
 `;
