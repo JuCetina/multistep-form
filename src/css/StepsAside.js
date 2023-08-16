@@ -10,4 +10,9 @@ export const StepsContainer = styled.div`
     position: relative;
     overflow: hidden;
     padding-top: 40px;
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 160px;
+        border-radius: 0;
+    }
 `;

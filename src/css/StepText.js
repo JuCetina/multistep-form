@@ -8,4 +8,7 @@ export const StepText = styled.p`
   font-weight: 400;
   text-transform: uppercase;
   color: ${textColor};
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;

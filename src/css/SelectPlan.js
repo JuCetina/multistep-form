@@ -22,15 +22,29 @@ export const PlanLabel = styled.label`
   &:active {
     border: 1px solid ${selectedBorder};
   }
+  @media screen and (max-width: 768px){
+    flex-direction: row;
+    width: 100%;
+    height: 77px;
+    justify-content: initial;
+    align-items: center;
+  }
 `;
 
 export const YearlyPlanLabel = styled(PlanLabel)`
   height: 183px;
+  @media screen and (max-width: 768px){
+    height: 99px;
+  }
 `;
 
 export const PlanImg = styled.img`
   width: 40px;
   height: 40px;
+  @media screen and (max-width: 768px){
+    margin-right: 14px;
+    align-self: flex-start;
+  }
 `;
 
 export const PlanInput = styled.input`
@@ -111,5 +125,13 @@ export const TimeText = styled.p`
   transition: 0.4s;
   &.isActive {
     color: ${textColor};
+  }
+`;
+
+export const Container = styled.div`
+  display: flex; 
+  gap: 18px;
+  @media screen and (max-width: 768px){
+    flex-direction: column;
   }
 `;

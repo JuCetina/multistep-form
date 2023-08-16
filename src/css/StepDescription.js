@@ -6,4 +6,7 @@ export const StepDescription = styled.div`
   text-transform: uppercase;
   color: white;
   letter-spacing: 1px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;

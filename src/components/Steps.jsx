@@ -1,12 +1,12 @@
 import { Step } from "../css/Step";
-import { StepContainer } from "../css/StepContainer";
+import { StepContainer, Wrapper } from "../css/StepContainer";
 import { StepText } from "../css/StepText";
 import { StepDescription } from "../css/StepDescription";
 
 const Steps = ({ step }) => {
-  let ok = step;
+  
   return (
-    <>
+    <Wrapper>
       <StepContainer>
         <Step className={`${step === 1 ? "isActive" : ""}`}>1</Step>
         <div>
@@ -38,7 +38,7 @@ const Steps = ({ step }) => {
           <StepDescription>Summary</StepDescription>
         </div>
       </StepContainer>
-    </>
+    </Wrapper>
   );
 };
 

@@ -19,4 +19,7 @@ export const Step = styled.p`
         color: ${activeText};
         background-color: ${activeBackground};
     }
+    @media screen and (max-width: 768px){
+        margin-right: 0;
+    }
 `;

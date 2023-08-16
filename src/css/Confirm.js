@@ -13,6 +13,9 @@ export const Wrapper = styled.div`
   border-radius: 8px;
   background-color: ${wrapperColor};
   margin-bottom: 25px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Header = styled.div`
@@ -30,6 +33,9 @@ export const Plan = styled.p`
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 10px;
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const ChangeBtn = styled.p`
@@ -46,6 +52,9 @@ export const Cost = styled.p`
   color: ${textColor};
   font-size: 16px;
   font-weight: 700;
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const Addon = styled.p`
@@ -62,6 +71,9 @@ export const TotalCost = styled.p`
   color: ${activeColor};
   font-size: 20px;
   font-weight: 700;
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const ConfirmBtn = styled(NxtButton)`
