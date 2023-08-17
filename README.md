@@ -1,6 +1,6 @@
 # Multi Step Form Project
 
-Multi Step Form project created with Vite and coded in React 18, using React Hook Form and React Testing Library with Jest.
+Multi Step Form project created with Vite and coded in React 18, using React Hook Form, Styled components and React Testing Library with Jest.
 
 
 ## How to run the repository in a local environment
