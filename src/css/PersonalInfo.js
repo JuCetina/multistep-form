@@ -126,6 +126,7 @@ export const MobileWrapper = styled.div`
     background-color: white;
     position: absolute;
     bottom: 0;
+    left: 0;
   }
 `;
 
