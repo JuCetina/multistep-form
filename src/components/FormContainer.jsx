@@ -37,7 +37,6 @@ const FormContainer = () => {
 
   return (
     <Container>
-      
       <MainWrapper>
         <StepsAside step={step} />
         <form onSubmit={handleSubmit(saveForm)}>
