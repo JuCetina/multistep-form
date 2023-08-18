@@ -17,6 +17,7 @@ test('Renderiza la selección del plan', () => {
 
   expect(inputElement).toHaveLength(3);
   expect(submitButton).toHaveLength(2);
+  // expect(submitButton[0]).toBeDisabled();
 
   fireEvent.change(inputElement[0], { target: { value: "Juan"} } );
   expect(inputElement[0].value).toBe("Juan");
@@ -25,7 +26,13 @@ test('Renderiza la selección del plan', () => {
   fireEvent.change(inputElement[2], { target: { value: "1234567"} } );
   expect(inputElement[2].value).toBe("1234567");
 
-  fireEvent.click(submitButton[0]);
-
   screen.debug();
+
+  // expect(submitButton[0]).not.toBeDisabled();
+
+  // fireEvent.click(submitButton[0]);
+
+  
+  // const selectPlanText = screen.getByText(/You have the option of monthly or yearly billing./i);
+  // expect(selectPlanText).toBeInTheDocument();
 });
